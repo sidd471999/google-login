@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-03T12:54:27.282Z",
+    "end": "2022-12-03T12:58:52.085Z",
+    "duration": 264803,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "954fd5d2-be04-46ad-ab5a-90271ccd2f9b",
+      "title": "",
+      "fullFile": "cypress/integration/hotelbooking.spec.js",
+      "file": "cypress/integration/hotelbooking.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "de128090-f47c-4292-8f1d-322921d5a82d",
+          "title": "Check the login Functionality of Trip.com",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check the login Functionality by valid credentials",
+              "fullTitle": "Check the login Functionality of Trip.com Check the login Functionality by valid credentials",
+              "timedOut": null,
+              "duration": 260250,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.trip.com\");\ncy.get(\".mc-hd__login-btn\").click();\ncy.get('[placeholder=\"Please enter an email address\"]').type(\"siddhantgadakh121@gmail.com\");\ncy.get(\"#ibu_login_submit > div\").click();\ncy.wait(10000);\ncy.get(\":nth-child(2) > .r_input > .one_txt_cut\").type(\"Liveyourlife@1\");\ncy.get(\":nth-child(1) > .form_wrapper > #ibu_login_submit > div\").click();\ncy.wait(10000);\ncy.get(\".mc-hd__account-username\").click();\ncy.get(\".mc-hd__account-link\").eq(3).click();\ncy.get(\"#givennameValue\").should(\"contain.text\", \"Siddhant\"); // tc02 code\ncy.get(\"#header_action_nav_hotels\").click();\ncy.get(\"#hotels-destinationV8\").type(\"Mumbai\");\ncy.get(\"#dropList\").eq(0).click();\ncy.get(\"#checkIn\").click();\ncy.get(\".is-allow-hover>.day\").contains(\"5\").first().click();\ncy.get(\".is-allow-hover>.day\").contains(\"6\").first().click(); // cy.get('.u-icon u-icon-ic_new_dropdown_line icon-arrow').click()\n// cy.wait(1000)\ncy.get('[type=\"ic_bestir_plus\"]').eq(1).click().wait(500).dblclick();\ncy.wait(1000);\ncy.get('[type=\"ic_bestir_plus\"]').last().dblclick();\ncy.get(\".done>.u-btn.u-btn-primary\").click();\ncy.get(\"#keyword\").clear().wait(500);\ncy.get(\".searbtn-txt\").click();\ncy.get(\"#preload-room-guest>span\").first().contains(\"1 Room\");\ncy.get(\"#preload-room-guest>span\").eq(1).contains(\"4 Adults\");\ncy.get(\"#preload-room-guest>span\").last().contains(\", 2 Children\");\ncy.get(\".room-guest > .u-icon\").click();\ncy.get(\".actions > .u-icon-ic_bestir_minus\").eq(1).dblclick().click();\ncy.get(\".done>.u-btn.u-btn-primary\").click();\ncy.get(\"#keyword\").clear();\ncy.wait(500);\ncy.get(\".searbtn-txt\").click();\ncy.get(\".filter-title > h3\").should(\"be.visible\");\ncy.wait(10000).scrollTo(\"bottom\");\ncy.wait(10000).scrollTo(\"bottom\");\ncy.wait(15000).scrollTo(\"bottom\"); // cy.get('.list-card-title>span').eq(21).scrollIntoView().wait(3000).click()\ncy.window().then(win => {\n  cy.stub(win, \"open\").callsFake((url, target) => {\n    return win.open.wrappedMethod.call(win, url, \"_self\");\n  }).as(\"open\");\n  cy.get(\".list-card-title>span\").eq(21).scrollIntoView().wait(3000).click();\n  cy.get(\"@open\");\n});\ncy.get(\".detail-headline-price-v8_select\").click();\ncy.get('.book-box>div.book').first().click();\ncy.wait(1000); // cy.get('.btn > .u-btn > span').click()\ncy.wait(2000);\ncy.get('.date').contains(\"Mon, Dec 5\");\ncy.get('.date').contains(\"Tue, Dec 6\");\ncy.wait(1000).scrollTo(\"bottom\");\ncy.get('.price').should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.date`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.date`, but never found it.\n    at Context.eval (https://www.trip.com/__cypress/tests?p=cypress\\integration\\hotelbooking.spec.js:154:8)",
+                "diff": null
+              },
+              "uuid": "4db6437f-d482-48f7-9515-f87a1e817cd7",
+              "parentUUID": "de128090-f47c-4292-8f1d-322921d5a82d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4db6437f-d482-48f7-9515-f87a1e817cd7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 260250,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
